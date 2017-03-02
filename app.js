@@ -1,4 +1,4 @@
-var ang = angular.module('myApp', ['usersnapLogging']);
+var ang = angular.module('myApp', ['xavientClientSideLogging']);
 
 ang.config(function ($logProvider, mySProvider) {
     var mySRef = mySProvider.$get();
@@ -11,7 +11,7 @@ ang.service('myS', function () {
 
     this.serviceCall = function (error) {
         console.log(error)
-        debugger;
+
     }
 })
 

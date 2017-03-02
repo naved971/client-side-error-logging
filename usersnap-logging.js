@@ -1,6 +1,6 @@
 /* globals angular */
 
-angular.module("usersnapLogging", [])
+angular.module("xavientClientSideLogging", [])
 
     .config(["$provide", function ($provide) {
         $provide.provider("$log", function $UsersnapLogProvider() {
