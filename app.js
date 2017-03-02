@@ -1,13 +1,16 @@
 var ang = angular.module('myApp', ['usersnapLogging']);
 
-ang.config(function($logProvider,mySProvider){
-debugger;
+ang.config(function ($logProvider, mySProvider) {
     var mySRef = mySProvider.$get();
-        $logProvider.debugEnabled(false);
-});
-ang.service('myS',function(){
+    $logProvider.registerEnabled(true,mySRef.serviceCall);
 
-    this.serviceCall= function(){
+
+    // $logProvider.debugEnabled(false);
+});
+ang.service('myS', function () {
+
+    this.serviceCall = function (error) {
+        console.log(error)
         debugger;
     }
 })
