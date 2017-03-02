@@ -10,7 +10,7 @@ ang.config(function ($logProvider, mySProvider) {
 ang.service('myS', function () {
 
     this.serviceCall = function (error) {
-        console.log(error)
+        console.log(error,'bilal')
 
     }
 })
@@ -23,10 +23,10 @@ ang.controller("myHome", function ($scope, $log) {
 
     }
 
-
+ $log.error();
 
     $scope.showLog = function () {
-        $log.error();
+
     }
 
 })

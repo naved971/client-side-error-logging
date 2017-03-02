@@ -122,11 +122,10 @@ angular.module("xavientClientSideLogging", [])
                             // latest version of it
                             var curLogFn = $window.console[type] || $window.console.log || angular.noop;
 
-                            if (registerError && registerService) {
+                            if (registerError && registerService && args.length>0) {
                                 // console.log(args)
                                 registerService(args);
                             }
-
                             return curLogFn.apply(console, args);
                         };
                     }
@@ -136,7 +135,6 @@ angular.module("xavientClientSideLogging", [])
                     // or we are IE where console.log doesn't have apply so we log at least
                     // first 2 args
                     return function (arg1, arg2) {
-                        debugger;
                         ($window.console[type] || $window.console.log || angular.noop)(arg1, arg2 == null ? '' : arg2);
                     };
                 }
